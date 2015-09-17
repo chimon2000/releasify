@@ -16,10 +16,10 @@
   "keywords": [
     "github",
     "version",
-    "npm", 
+    "npm",
     "git",
     "distribution",
-    "version", 
+    "version",
     "tool",
     "tag",
     "script",
@@ -30,6 +30,7 @@
   "author": "Ryan Edge <chimon@my.com>",
   "license": "ISC",
   "dependencies": {
+    "async": "^1.4.2",
     "chalk": "^1.1.1",
     "github": "^0.2.4",
     "inquirer": "^0.10.0",
