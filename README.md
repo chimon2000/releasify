@@ -1,12 +1,8 @@
-# github-release
+# releasify
 
 Easily integrate GitHub releases in your build automation or do it all from the CLI.
 
-## Dependencies
-- [yargs](https://github.com/bcoe/yargs)
-- [inquirer.js](https://github.com/SBoudrias/Inquirer.js)
-- [chalk](https://github.com/chalk/chalk)
-- [octokat](https://github.com/philschatz/octokat.js)
+**Important:** Currently only supports Node >= v4.0.0
 
 ## Manifest Options 
 
@@ -39,16 +35,84 @@ An array of asset objects containing the following:
 
 
 ## commands
+```
+Commands:
+  latest         get latest release from GitHub
+  upload         upload assets to a release in GitHub
+  list           list all of the releases in GitHub
+  create         create a new release in GitHub
+  delete-latest  delete latest release from GitHub
+  delete-all     purge GitHub of all releases
 
-`list` - Gets the tags of every release
+Options:
+  -h, --help  Show help                                                [boolean]
+```
 
-`lastest` - Gets the tags of the latest release
+### `latest` command options
 
-`create` - Creates a new release
+```
+Options:
+  -m, --manifest  the manifest file that you would like to read from.  [string] [default: "package.json"]
+  -h, --help      Show help                                            [boolean]
+```
 
-`delete-latest` - Delete the latest release
+### `upload` command options
 
-`delete-all` - Delete all releaseses
+```
+Options:
+  -v, --version   the tag version to be used during creation            [string]
+  -m, --manifest  the manifest file that you would like to read from.   [string] [default: "package.json"]
+  -h, --help      Show help                                             [boolean]
+```
 
+### `list` command options
 
+```
+  -m, --manifest  the manifest file that you would like to read from.  [string] [default: "package.json"]
+  -h, --help      Show help   
+```
 
+### `create` command options
+
+```
+  -a, --assets    include assets                      [boolean] [default: false]
+  -v, --version   the tag version to be used during creation            [string]
+  -m, --manifest  the manifest file that you would like to read from.  [string] [default: "package.json"]
+  -h, --help      Show help  
+```
+
+### `delete-latest` command options
+
+```
+  -m, --manifest  the manifest file that you would like to read from.  [string] [default: "package.json"]
+  -h, --help      Show help  
+```
+
+### `delete-all` command options
+
+```
+  -m, --manifest  the manifest file that you would like to read from.  [string] [default: "package.json"]
+  -h, --help      Show help  
+```
+
+## Purpose
+The purpose of this package is to be easily plugged into any automated build process to create releases. It can rely either on arguments or the package.json.
+
+## Influences
+[release-it](https://github.com/webpro/release-it)
+
+## Dependencies
+- [yargs](https://github.com/bcoe/yargs)
+- [inquirer.js](https://github.com/SBoudrias/Inquirer.js)
+- [chalk](https://github.com/chalk/chalk)
+- [octokat](https://github.com/philschatz/octokat.js)
+
+## Future Considerations
+1. Support for earlier Node versions.
+1. Expose module.
+1. Bump versions based off latest release.
+1. Option to replace existing assets.
+1. Option to overwrite an existing release.
+
+## License
+[ISC](https://opensource.org/licenses/ISC)
