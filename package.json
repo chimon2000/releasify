@@ -26,7 +26,6 @@
     "publish",
     "repository"
   ],
-  "preferGlobal": true,
   "author": "Ryan Edge <chimon@my.com>",
   "license": "ISC",
   "dependencies": {
