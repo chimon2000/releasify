@@ -12,6 +12,7 @@
     "type": "git",
     "url": "git://github.com/chimon2000/releasify.git"
   },
+  "preferGlobal": true,
   "keywords": [
     "github",
     "version",
