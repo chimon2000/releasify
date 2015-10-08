@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Releasify by chimon2000</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Releasify</h1>
+      <h2 class="project-tagline">A simple release tool for GitHub</h2>
+      <a href="https://github.com/chimon2000/releasify" class="btn">View on GitHub</a>
+      <a href="https://github.com/chimon2000/releasify/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/chimon2000/releasify/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="releasify" class="anchor" href="#releasify" aria-hidden="true"><span class="octicon octicon-link"></span></a>releasify</h1>
+
+<p>Easily integrate GitHub releases in your build automation or do it all from the CLI.</p>
+
+<p><strong>Important:</strong> Currently only supports Node &gt;= v4.0.0</p>
+
+<h2>
+<a id="manifest-options" class="anchor" href="#manifest-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Manifest Options</h2>
+
+<p><strong>Required</strong>
+<code>github-release.repository</code> - <em>String</em> </p>
+
+<p>The repository name</p>
+
+<p><code>github-release.auth</code> - <em>String</em> </p>
+
+<p>The authentication token</p>
+
+<p><code>github-release.root</code> - <em>String</em></p>
+
+<p>The root url of GitHub</p>
+
+<p><strong>Optional</strong>
+<code>assets</code> - <em>Array</em></p>
+
+<p>An array of asset objects containing the following:</p>
+
+<blockquote>
+<p><code>path</code> - <em>String</em></p>
+
+<p>The path of the asset</p>
+
+<p><code>mime</code> - <em>String</em></p>
+
+<p>The mime type of the asset</p>
+</blockquote>
+
+<h2>
+<a id="commands" class="anchor" href="#commands" aria-hidden="true"><span class="octicon octicon-link"></span></a>commands</h2>
+
+<pre><code>Commands:
+  latest         get latest release from GitHub
+  upload         upload assets to a release in GitHub
+  list           list all of the releases in GitHub
+  create         create a new release in GitHub
+  delete-latest  delete latest release from GitHub
+  delete-all     purge GitHub of all releases
+
+Options:
+  -h, --help  Show help                                                [boolean]
+</code></pre>
+
+<h3>
+<a id="latest-command-options" class="anchor" href="#latest-command-options" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>latest</code> command options</h3>
+
+<pre><code>Options:
+  -m, --manifest  the manifest file that you would like to read from.  [string] [default: "package.json"]
+  -h, --help      Show help                                            [boolean]
+</code></pre>
+
+<h3>
+<a id="upload-command-options" class="anchor" href="#upload-command-options" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>upload</code> command options</h3>
+
+<pre><code>Options:
+  -v, --version   the tag version to be used during creation            [string]
+  -m, --manifest  the manifest file that you would like to read from.   [string] [default: "package.json"]
+  -h, --help      Show help                                             [boolean]
+</code></pre>
+
+<h3>
+<a id="list-command-options" class="anchor" href="#list-command-options" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>list</code> command options</h3>
+
+<pre><code>  -m, --manifest  the manifest file that you would like to read from.  [string] [default: "package.json"]
+  -h, --help      Show help   
+</code></pre>
+
+<h3>
+<a id="create-command-options" class="anchor" href="#create-command-options" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>create</code> command options</h3>
+
+<pre><code>  -a, --assets    include assets                      [boolean] [default: false]
+  -v, --version   the tag version to be used during creation            [string]
+  -m, --manifest  the manifest file that you would like to read from.  [string] [default: "package.json"]
+  -h, --help      Show help  
+</code></pre>
+
+<h3>
+<a id="delete-latest-command-options" class="anchor" href="#delete-latest-command-options" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>delete-latest</code> command options</h3>
+
+<pre><code>  -m, --manifest  the manifest file that you would like to read from.  [string] [default: "package.json"]
+  -h, --help      Show help  
+</code></pre>
+
+<h3>
+<a id="delete-all-command-options" class="anchor" href="#delete-all-command-options" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>delete-all</code> command options</h3>
+
+<pre><code>  -m, --manifest  the manifest file that you would like to read from.  [string] [default: "package.json"]
+  -h, --help      Show help  
+</code></pre>
+
+<h2>
+<a id="purpose" class="anchor" href="#purpose" aria-hidden="true"><span class="octicon octicon-link"></span></a>Purpose</h2>
+
+<p>The purpose of this package is to be easily plugged into any automated build process to create releases. It can rely either on arguments or the package.json.</p>
+
+<h2>
+<a id="influences" class="anchor" href="#influences" aria-hidden="true"><span class="octicon octicon-link"></span></a>Influences</h2>
+
+<p><a href="https://github.com/webpro/release-it">release-it</a></p>
+
+<h2>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependencies</h2>
+
+<ul>
+<li><a href="https://github.com/bcoe/yargs">yargs</a></li>
+<li><a href="https://github.com/SBoudrias/Inquirer.js">inquirer.js</a></li>
+<li><a href="https://github.com/chalk/chalk">chalk</a></li>
+<li><a href="https://github.com/philschatz/octokat.js">octokat</a></li>
+</ul>
+
+<h2>
+<a id="future-considerations" class="anchor" href="#future-considerations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Future Considerations</h2>
+
+<ol>
+<li>Support for earlier Node versions.</li>
+<li>Expose module.</li>
+<li>Bump versions based off latest release.</li>
+<li>Option to replace existing assets.</li>
+<li>Option to overwrite an existing release.</li>
+</ol>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p><a href="https://opensource.org/licenses/ISC">ISC</a></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/chimon2000/releasify">Releasify</a> is maintained by <a href="https://github.com/chimon2000">chimon2000</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
